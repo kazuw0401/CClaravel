@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/check', 'CodeCreateController@contact');
+Route::get('/contact', 'CodeCreateController@check');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
