@@ -23,3 +23,4 @@ Auth::routes();
 
 // Laravel青本のコード
 Route::get('/hello', 'HelloController@index');
+Route::post('/hello', 'HelloController@post');

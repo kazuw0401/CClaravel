@@ -7,12 +7,9 @@ use Illuminate\Http\Response;
 
 class HelloController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $data = ['msg'=>'これはコントローラから渡されたメッセージです。',
-                'id'=>$request->id
-    
-    ];
-        return view('hello.index', $data);
+        $data = ['カレー', '肉じゃが', 'とんかつ定食', 'カルボナーラ', '麻婆豆腐', 'ステーキ定食'];
+        return view('hello.index', ['data'=>$data]);
     }
 }
