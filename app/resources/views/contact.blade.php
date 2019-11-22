@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>お問い合わせ内容を入力</h1>
-    <form action="{{action('CodeCreateController@check')}}" method="post">
+    <form action="/contact" method="post">
         @csrf
         {{-- {{ csrf_field() }} --}}
         <p>名前</p>

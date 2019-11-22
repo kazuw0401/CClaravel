@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// CodeCreate課題
 Route::get('/check', 'CodeCreateController@contact');
 Route::get('/contact', 'CodeCreateController@check');
 Route::post('/contact', 'CodeCreateController@check');
