@@ -10,9 +10,14 @@ class CodeCreateController extends Controller
     {
         return view('contact');
     }
-
-    public function check()
+    
+    public function check(Request $request)
     {
-        return view('check');
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'content' => $request->content,
+        ];
+        return view('check', $data);
     }
 }

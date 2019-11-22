@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::get('/check', 'CodeCreateController@contact');
 Route::get('/contact', 'CodeCreateController@check');
+Route::post('/contact', 'CodeCreateController@check');
 
 // 認証
 Auth::routes();
