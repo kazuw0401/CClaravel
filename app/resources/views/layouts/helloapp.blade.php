@@ -12,7 +12,9 @@
     ul {font-size: 12pt;}
     hr {margin: 25px 100px; border-top: 1px dashed #ddd;}
     .menutitle {font-size: 14px; font-weight: bold; margin: 0}
-    .content {margin: 10px;}
+    .content {margin: 10px;} 
+    th {background-color: #999; color: #fff; padding: 5px 10px;}
+    td {border: solid 1px #aaa; color: #999; padding: 5px 10px;}
     .footer {text-align: right; font-size: 10px; margin: 10px;
         border-bottom: solid 1px #ccc; color: #ccc;}
     </style>
