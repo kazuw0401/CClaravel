@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Bulider;
 use App\Person;
 
 class PersonController extends Controller
@@ -20,7 +21,10 @@ class PersonController extends Controller
 
     public function search(Request $request)
     {
-        $item = Person::find($request->input);
+        $min = $request->input * 1;
+        $max = $min + 10;
+        $item = Person::ageGreaterThan($min)
+            ->ageLessThan($max)->first();
         $param = ['input' => $request->input, 'item' => $item];
         return view('person.find', $param);
     }
