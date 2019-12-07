@@ -35,10 +35,35 @@ class PersonController extends Controller
 
     public function create(Request $request)
     {
+        // バリデーションの実行
         $this->validate($request, Person::$rules);
+        // Personインスタンスを作成
         $person = new Person;
+        // 値を取得して変数に代入
         $form = $request->all();
+        // テーブルにない_tokenを削除
         unset($form['_token']);
+        // インスタンスに値を設定して保存
+        $person->fill($form)->save();
+        return redirect('/person');
+    }
+
+    public function edit(Request $request)
+    {
+        $person = Person::find($request->id);
+        return view('person.edit', ['form' => $person]);
+    }
+
+    public function update(Request $request)
+    {
+        $this->validate($request, Person::$rules);
+        // インスタンスを取得して変数に代入
+        $person = Person::find($request->id);
+        // 値を取得して変数に代入
+        $form = $request->all();
+        // テーブルにない_tokenを削除
+        unset($form['_token']);
+        // インスタンスに値を設定して保存
         $person->fill($form)->save();
         return redirect('/person');
     }
