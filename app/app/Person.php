@@ -43,8 +43,15 @@ class Person extends Model
         'age' => 'integer|min:0|max:150'
     );
 
+    // 一対一のリレーション
     public function board()
     {
         return $this->hasOne('App\Board');
+    }
+
+    // 一対多のリレーション
+    public function boards()
+    {
+        return $this->hasMany('App\Board');
     }
 }
