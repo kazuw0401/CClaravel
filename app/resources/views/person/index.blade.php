@@ -13,7 +13,7 @@
             <th>Person</th>
             <th>Board</th>
         </tr>
-        @foreach ($items as $item)
+        @foreach ($hasItems as $item)
             <tr>
                 <td>{{$item->getData()}}</td>
                 <td>@if ($item->boards != null)
@@ -26,6 +26,17 @@
                     </table>
                 @endif
                 </td>
+            </tr>
+        @endforeach
+    </table>
+    <div style="margin:10px"></div>
+    <table>
+        <tr>
+            <th>Person</th>
+        </tr>
+        @foreach ($noItems as $item)
+            <tr>
+                <td>{{$item->getData()}}</td>
             </tr>
         @endforeach
     </table>
