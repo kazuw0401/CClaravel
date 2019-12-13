@@ -20,6 +20,8 @@ Route::get('/check', 'CodeCreateController@contact');
 Route::get('/contact', 'CodeCreateController@check');
 Route::post('/contact', 'CodeCreateController@check');
 
+Route::get('/test', 'TestController@index');
+
 // 認証
 Auth::routes();
 
