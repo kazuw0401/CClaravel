@@ -57,3 +57,4 @@ Route::post('/board/add', 'BoardController@create');
 
 // Restful
 Route::resource('rest', 'RestappController');
+Route::get('/hello/rest', 'HelloController@rest');
